@@ -1,1 +1,22 @@
+Router>enable
+Router#configure terminal
+
+Router(config)#interface gigabitEthernet 0/0/0
+Router(config-if)#ip address 172.16.1.1 255.255.255.128
+Router(config-if)#description sw-01-Link
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+
+Router(config)#interface gigabitEthernet 0/0/1
+Router(config-if)#ip address 172.16.1.129 255.255.255.192
+Router(config-if)#description sw-02-Link
+Router(config-if)#no shutdown 
+Router(config-if)#exit
+
+Router(config)#interface serial 0/1/0
+Router(config-if)#description R-02-Link
+Router(config-if)#ip address 172.16.2.1 255.255.255.252
+Router(config-if)#clock rate 64000
+Router(config-if)#no shutdown 
+Router(config-if)#exit
 

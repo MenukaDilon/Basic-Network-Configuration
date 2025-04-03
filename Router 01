@@ -23,3 +23,5 @@ Router(config-if)#clock rate 64000
 Router(config-if)#no shutdown 
 Router(config-if)#exit
 
+Router(config)#ip route 172.16.1.192 255.255.255.192 172.16.2.2
+Router(config)#ip route 172.16.0.0 255.255.255.0 172.16.2.2

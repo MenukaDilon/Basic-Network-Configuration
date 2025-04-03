@@ -21,3 +21,6 @@ Router(config-if)#ip address 172.16.2.2 255.255.255.252
 Router(config-if)#ip helper-address 172.16.0.3
 Router(config-if)#no shutdown 
 Router(config-if)#exit
+
+Router(config)#ip route 172.16.1.0 255.255.255.128 172.16.2.1
+Router(config)#ip route 172.16.1.128 255.255.255.192 172.16.2.1

@@ -25,3 +25,9 @@ Router(config-if)#exit
 
 Router(config)#ip route 172.16.1.192 255.255.255.192 172.16.2.2
 Router(config)#ip route 172.16.0.0 255.255.255.0 172.16.2.2
+
+Router(config)#line console 0
+Router(config-line)#password Cisco@123
+Router(config-line)#exec-timeout 15
+Router(config-line)#login
+Router(config-line)#exit

@@ -24,3 +24,29 @@ Router(config-if)#exit
 
 Router(config)#ip route 172.16.1.0 255.255.255.128 172.16.2.1
 Router(config)#ip route 172.16.1.128 255.255.255.192 172.16.2.1
+
+Router(config)#hostname R-02
+
+R-02(config)#line console 0
+R-02(config-line)#password Cisco@123
+R-02(config-line)#exec-timeout 15
+R-02(config-line)#login
+R-02(config-line)#exit
+
+R-02(config)#enable secret Cisco@123
+
+R-02(config)#user name secret Admin secret admin@123
+R-02(config)#ip domain name cisco.lk
+R-02(config)#crypto key generate rsa
+How many bits in the modulus [512]: 1024
+
+R-02(config)#ip ssh version 2
+R-02(config)#line vty 0
+R-02(config-line)#transport input ssh
+R-02(config-line)#login local
+R-02(config-line)#exec-timeout 15
+R-02(config-line)#exit
+
+R-02(config)#service password-encryption 
+
+R-02(config)#login block-for 300 attempts 3 within 60
